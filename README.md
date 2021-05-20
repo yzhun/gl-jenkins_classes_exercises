@@ -13,3 +13,4 @@ Configure your pipeline job use your **Jenkinsfile** from Github repo.
 
 * Create Pipeline which does the same that Freestyle projects does.
 * Think about what you could improve in this pipeline.
+* Use this repo for tests: https://opendev.org/jjb/jenkins-job-builder
