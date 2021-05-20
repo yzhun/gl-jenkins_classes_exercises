@@ -1,6 +1,6 @@
 # Create new branch 
 
-Please create new branch from master and call it like feature/your_name - where your_name is your real id
+Please create new branch from main and call it like feature/your_name - where your_name is your real id
 
 # Jenkinsfile
 
