@@ -47,7 +47,7 @@ pipeline {
                 sh 'python setup.py bdist_wheel'
             }
         }
-
+    }
     post {
         success {
             echo "Finish of pipeline with status success."
