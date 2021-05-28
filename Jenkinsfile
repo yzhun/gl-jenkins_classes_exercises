@@ -15,7 +15,6 @@ pipeline {
     stages {
 
         stage("Checkout") {
-        
             steps {
                 git(
                     url: "https://opendev.org/jjb/jenkins-job-builder.git"
@@ -26,7 +25,7 @@ pipeline {
        stage("1 Run unit tests") {
             steps {
                 echo "${GREEN_BEGINNING}Run unit tests${GREEN_END}\n"
-                sh 'ox -e py27'
+                sh 'tox -e py27'
             }
         }
         stage("2 Run docs") {
@@ -48,6 +47,7 @@ pipeline {
             }
         }
     }
+    
     post {
         success {
             echo "Finish of pipeline with status success."
