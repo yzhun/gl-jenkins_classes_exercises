@@ -22,25 +22,25 @@ pipeline {
             }
         }
 
-       stage("1 Run unit tests") {
+       stage("Run unit tests") {
             steps {
                 echo "${GREEN_BEGINNING}Run unit tests${GREEN_END}\n"
                 sh 'tox -e py27'
             }
         }
-        stage("2 Run docs") {
+        stage("Run docs") {
             steps {
                 echo "${GREEN_BEGINNING}Run docs build${GREEN_END}\n"
                 sh 'tox -e docs'
             }
         }
-        stage("3 Run coverage build") {
+        stage("Run coverage build") {
             steps {
                 echo "${GREEN_BEGINNING}Run coverage build${GREEN_END}\n"
                 sh 'tox -e cover'
             }
         }
-        stage("4 Build python package") {
+        stage("Build python package") {
             steps {
                 echo "${GREEN_BEGINNING}Build python package${GREEN_END}\n"
                 sh 'python setup.py bdist_wheel'
