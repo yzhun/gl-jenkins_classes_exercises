@@ -14,6 +14,15 @@ pipeline {
     
     stages {
 
+        stage("Checkout") {
+        
+            steps {
+                git(
+                    url: "https://opendev.org/jjb/jenkins-job-builder.git"
+                )
+            }
+        }
+
         stage("Test stage") {
             steps {
                 echo "Just an echo something..."
