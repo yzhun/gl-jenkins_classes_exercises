@@ -32,7 +32,8 @@ pipeline {
 
     post {
         success {
-            echo "Finish of pipeline"
+            echo "Finish of pipeline with status success."
+            archiveArtifacts("doc/source/*.rst, dist/*.whl")
         }
     }
 }
