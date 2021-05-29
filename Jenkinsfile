@@ -4,6 +4,7 @@ pipeline {
     environment {
         GREEN_BEGINNING="\033[32m"
         GREEN_END="\033[0m"
+        BRANCH="feature/yzhun"
     }
 
     options {
@@ -19,6 +20,10 @@ pipeline {
                 git(
                     url: "https://opendev.org/jjb/jenkins-job-builder.git"
                 )
+                wrap([$class: 'BuildUser']) {
+                    // use name of the patchset as the build name
+                    buildName "#${BUILD_NUMBER}_${BUILD_USER}_${BRANCH}"
+                }
             }
         }
 
